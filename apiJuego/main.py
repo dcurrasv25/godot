@@ -4,29 +4,40 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-# Modelo para recibir datos en el POST
+# --- MODELOS ---
 class CoinUpdate(BaseModel):
     coins: int
 
-coins_collected = 0
+class DeathUpdate(BaseModel):
+    deaths: int
 
-# 1. Ruta Raíz (Para que no salga 404 en el navegador)
+# --- VARIABLES ---
+coins_collected = 0
+total_deaths = 0
+
 @app.get("/")
 def index():
-    return {"mensaje": "Servidor de Godot activo", "monedas": coins_collected}
+    return {"mensaje": "Servidor activo", "monedas": coins_collected, "muertes": total_deaths}
 
-# 2. Obtener items (GET)
+# --- ENDPOINTS MONEDAS ---
 @app.get("/items")
 def get_items():
     return {"count": coins_collected}
 
-# 3. Guardar items (POST)
 @app.post("/items")
 def add_item(item: CoinUpdate):
     global coins_collected
     coins_collected = item.coins
-    print(f"Recibido desde Godot: {item.coins}")
+    print(f"Monedas recibidas: {item.coins}")
     return {"count": coins_collected}
+
+# --- ENDPOINTS MUERTES (NUEVO) ---
+@app.post("/deaths")
+def update_deaths(data: DeathUpdate):
+    global total_deaths
+    total_deaths = data.deaths
+    print(f"Muertes recibidas desde Godot: {total_deaths}")
+    return {"status": "ok", "total_deaths": total_deaths}
 
 @app.get("/favicon.ico")
 def favicon():
