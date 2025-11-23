@@ -5,6 +5,12 @@ const JUMP_VELOCITY = -400.0
 
 @onready var anim = $AnimatedSprite2D
 
+func _ready():
+	add_to_group("player")  # El enemigo lo detectará
+
+func die():
+	queue_free()  # Elimina al jugador al morir
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta

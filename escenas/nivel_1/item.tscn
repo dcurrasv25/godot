@@ -1,0 +1,85 @@
+[gd_scene load_steps=17 format=3 uid="uid://scbsiy6byxj2"]
+
+[ext_resource type="Script" uid="uid://qbyl2b6ejx4i" path="res://escenas/nivel_1/item.gd" id="1_kwe4y"]
+[ext_resource type="Texture2D" uid="uid://cbaoihngntn8m" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/diamond_big.png" id="2_70qy8"]
+[ext_resource type="Texture2D" uid="uid://dejd3tdav7x2q" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/diamond_big_01.png" id="3_ijxl3"]
+[ext_resource type="Texture2D" uid="uid://dx5stde1dsqt" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/diamond_big_02.png" id="4_1l6ed"]
+[ext_resource type="Texture2D" uid="uid://dohk2kuyb8rw6" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/diamond_big_03.png" id="5_mmwwy"]
+[ext_resource type="Texture2D" uid="uid://blei5cn4qymvw" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/diamond_big_05.png" id="6_bq5d3"]
+[ext_resource type="Texture2D" uid="uid://ocblmpbn8tn0" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/diamond_big_06.png" id="7_05ern"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2qy47"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgv4v"]
+atlas = ExtResource("2_70qy8")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcjkr"]
+atlas = ExtResource("3_ijxl3")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqqnw"]
+atlas = ExtResource("4_1l6ed")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvqpp"]
+atlas = ExtResource("5_mmwwy")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfla4"]
+atlas = ExtResource("6_bq5d3")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6mey"]
+atlas = ExtResource("6_bq5d3")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obp03"]
+atlas = ExtResource("7_05ern")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x86vu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgv4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcjkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqqnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvqpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfla4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6mey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obp03")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Item" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_kwe4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -122.5)
+scale = Vector2(0.8125, 0.92857146)
+shape = SubResource("CircleShape2D_2qy47")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.5, -122.5)
+scale = Vector2(0.8125, 0.92857146)
+sprite_frames = SubResource("SpriteFrames_x86vu")
+frame_progress = 0.7104999
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
