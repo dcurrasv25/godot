@@ -1,0 +1,93 @@
+[gd_scene load_steps=20 format=3 uid="uid://cqyyn5sujh8ok"]
+
+[ext_resource type="Script" uid="uid://dww7kae3pnlic" path="res://item_2.gd" id="1_2cton"]
+[ext_resource type="Texture2D" uid="uid://b2osxlls44ano" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger01.png" id="2_5q4fq"]
+[ext_resource type="Texture2D" uid="uid://pig7lnhtdsa8" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger02.png" id="3_1v385"]
+[ext_resource type="Texture2D" uid="uid://cbdtyirmq2wkj" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger03.png" id="4_r3iwv"]
+[ext_resource type="Texture2D" uid="uid://37i6ro3i6k6l" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger04.png" id="5_qoobb"]
+[ext_resource type="Texture2D" uid="uid://cxnu1etf5eshq" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger05.png" id="6_cgl85"]
+[ext_resource type="Texture2D" uid="uid://dqerfkjednisn" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger06.png" id="7_yfapb"]
+[ext_resource type="Texture2D" uid="uid://bx5hw8lcipqa6" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger07.png" id="8_fttms"]
+[ext_resource type="Texture2D" uid="uid://tahxncvih3fm" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger08.png" id="9_vobol"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2qy47"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j2ns"]
+atlas = ExtResource("2_5q4fq")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wubc3"]
+atlas = ExtResource("3_1v385")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxe71"]
+atlas = ExtResource("4_r3iwv")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r75v"]
+atlas = ExtResource("5_qoobb")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elmvo"]
+atlas = ExtResource("6_cgl85")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpk4d"]
+atlas = ExtResource("7_yfapb")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b2yk"]
+atlas = ExtResource("8_fttms")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56fjq"]
+atlas = ExtResource("9_vobol")
+region = Rect2(0, 0, 4, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2skc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j2ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wubc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxe71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r75v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elmvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpk4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b2yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56fjq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Item2" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_2cton")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -122.5)
+scale = Vector2(0.8125, 0.92857146)
+shape = SubResource("CircleShape2D_2qy47")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -123)
+sprite_frames = SubResource("SpriteFrames_m2skc")
+frame_progress = 0.12044897
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

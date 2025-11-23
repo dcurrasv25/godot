@@ -58,3 +58,21 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0.0, speed)
 
 	move_and_slide()
+
+# 🚀 LÓGICA PARA CAMBIO DE ESCENA 🚀
+
+## Función Conectada al Area3D ("FinDeTunel")
+
+# ESTA FUNCIÓN DEBE SER CONECTADA MANUALMENTE DESDE EL NODO FinDeTunel (Area3D)
+# Selecciona el Area3D > Pestaña Nodo > Señal 'body_entered' > Conectar al nodo CharacterBody3D
+func _on_fin_de_tunel_body_entered(body: Node3D) -> void:
+	# Comprobamos que el cuerpo que entró en el área es ESTE personaje (el jugador).
+	if body == self:
+		
+		# **¡IMPORTANTE!** Reemplaza esta ruta con el path real de tu siguiente escena.
+		var siguiente_escena_path = "res://escenas/nivel_1/Nivel1.tscn" 
+		
+		print("¡El jugador ha llegado al final del túnel! Cambiando a: " + siguiente_escena_path)
+		
+		# Comando para cambiar de escena
+		get_tree().change_scene_to_file(siguiente_escena_path)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://be1c3ipyctjam"]
+[gd_scene load_steps=11 format=3 uid="uid://be1c3ipyctjam"]
 
 [ext_resource type="Script" uid="uid://bj1sh013uqxdx" path="res://escenas/tunel/character_body_3d.gd" id="1_aagwh"]
 
@@ -30,6 +30,9 @@ points = PackedVector3Array(1.6903936, 5.20777, 1.065241, -1.8968364, -5.5481987
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ntfss"]
 exposure_multiplier = 0.23
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aagwh"]
+size = Vector3(40.003036, 27.718906, 12.47998)
 
 [node name="Tunel" type="Node3D"]
 
@@ -91,3 +94,9 @@ transform = Transform3D(0.2090401, -0.036024634, 0.97724336, -0.19047603, 0.9786
 use_collision = true
 size = Vector3(27.50072, 77.30258, 83.297455)
 metadata/_edit_group_ = true
+
+[node name="FinalTunel" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinalTunel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33164024, 3.1033325, -99.41295)
+shape = SubResource("BoxShape3D_aagwh")

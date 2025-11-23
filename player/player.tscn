@@ -420,3 +420,5 @@ animation = &"Correr"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(28.429688, -519.3125)
 shape = SubResource("RectangleShape2D_k4kro")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
