@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://2h4cdwmwarw4"]
+
+[ext_resource type="Script" uid="uid://bt783mf7wr4es" path="res://musicanivel1.gd" id="1_g8qss"]
+[ext_resource type="AudioStream" uid="uid://dc6v8dguv045a" path="res://player/assets/sweet-life-luxury-chill-438146.mp3" id="2_a71vn"]
+
+[sub_resource type="GDScript" id="GDScript_kcpuj"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node" type="Node"]
+script = ExtResource("1_g8qss")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_a71vn")
+script = SubResource("GDScript_kcpuj")

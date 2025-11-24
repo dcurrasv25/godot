@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://1ooiyes2lne5"]
+[gd_scene load_steps=44 format=4 uid="uid://1ooiyes2lne5"]
 
 [ext_resource type="Script" uid="uid://dxj4xnrdofyt1" path="res://escenas/nivel_1/nivel_1.gd" id="1_6r0if"]
 [ext_resource type="Texture2D" uid="uid://tbqudwhmmpv5" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/02. Crystal World/background01.png" id="1_75tth"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://scbsiy6byxj2" path="res://escenas/nivel_1/item.tscn" id="10_ag8vp"]
 [ext_resource type="PackedScene" uid="uid://vht3gww5kxls" path="res://escenas/nivel_1/control.tscn" id="18_q4sah"]
 [ext_resource type="PackedScene" uid="uid://cqyyn5sujh8ok" path="res://escenas/nivel_1/item_2.tscn" id="20_30bau"]
+[ext_resource type="PackedScene" uid="uid://2h4cdwmwarw4" path="res://musicanivel1.tscn" id="22_wty8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gk33u"]
 texture = ExtResource("2_dwfl2")
@@ -4638,3 +4639,5 @@ position = Vector2(-2319, 141)
 
 [node name="Item3" parent="." instance=ExtResource("20_30bau")]
 position = Vector2(-1998, 110)
+
+[node name="Node" parent="." instance=ExtResource("22_wty8q")]

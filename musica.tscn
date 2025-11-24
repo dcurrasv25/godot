@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://drg8nqdludrtc"]
+
+[ext_resource type="Script" uid="uid://c3pvy3y0jvgmg" path="res://musica.gd" id="1_u4ygf"]
+[ext_resource type="AudioStream" uid="uid://c8m4rvw0wsov4" path="res://player/assets/caves-of-dawn-10376.mp3" id="2_fbscl"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_u4ygf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fbscl")
