@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://vht3gww5kxls"]
+
+[ext_resource type="Script" uid="uid://xsf2frnir4op" path="res://escenas/nivel_1/control.gd" id="1_3nra4"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.005669, 1)
+script = ExtResource("1_3nra4")
+
+[node name="PanelContainer" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -15.0
+offset_right = 108.0
+offset_bottom = 121.0
+scale = Vector2(1.2273896, 1.2193261)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 23.0
+offset_right = 108.0
+offset_bottom = 56.0
+scale = Vector2(0.90253776, 0.8479333)
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "jugar"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "salir"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "ruben guapo"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="." method="_on_quit_pressed"]

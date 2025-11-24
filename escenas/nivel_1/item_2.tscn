@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://tahxncvih3fm" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Collectible/dagger08.png" id="9_vobol"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qy47"]
+radius = 15.394035
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j2ns"]
 atlas = ExtResource("2_5q4fq")
@@ -87,6 +88,7 @@ shape = SubResource("CircleShape2D_2qy47")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -123)
+scale = Vector2(3.3774683, 1.8342122)
 sprite_frames = SubResource("SpriteFrames_m2skc")
 frame_progress = 0.12044897
 

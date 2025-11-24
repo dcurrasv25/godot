@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://be1c3ipyctjam"]
+[gd_scene load_steps=12 format=3 uid="uid://be1c3ipyctjam"]
 
 [ext_resource type="Script" uid="uid://bj1sh013uqxdx" path="res://escenas/tunel/character_body_3d.gd" id="1_aagwh"]
+[ext_resource type="Script" uid="uid://bg7keyymjrakm" path="res://escenas/tunel/TriggerCambioEscena.gd" id="2_srrnn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -96,6 +97,8 @@ size = Vector3(27.50072, 77.30258, 83.297455)
 metadata/_edit_group_ = true
 
 [node name="FinalTunel" type="Area3D" parent="."]
+script = ExtResource("2_srrnn")
+siguiente_escena_path = "uid://1ooiyes2lne5"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinalTunel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33164024, 3.1033325, -99.41295)

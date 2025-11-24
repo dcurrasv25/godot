@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2433jc5vyyj8"]
+
+[ext_resource type="Script" uid="uid://wv6offo6xysa" path="res://MenuPrincipal.gd" id="1_0fbet"]
+
+[node name="PrimerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0fbet")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "SINS"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "JUGAR"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_jugar_button_pressed"]
