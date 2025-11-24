@@ -25,7 +25,7 @@ func _physics_process(_delta):
 
 	# Chequeo exhaustivo de validez
 	if follow_player and is_instance_valid(player):
-		var dir = (player.global_position - global_position).normalized()
+		var dir = (player.global_position - global_position).normalized() 
 		velocity = dir * speed
 		move_and_slide()
 

@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://csc06e4kqtxto" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/Sprites/Enemy04/hit03.png" id="17_brf0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvosf"]
-size = Vector2(69.14563, 267.57886)
+size = Vector2(67.87572, 267.57886)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ykqyv"]
 atlas = ExtResource("2_x8kng")
@@ -226,10 +226,10 @@ collision_mask = 2
 script = ExtResource("1_vvosf")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(164, 100)
+position = Vector2(167, 104.99999)
 scale = Vector2(4.823153, 0.7754723)
 shape = SubResource("RectangleShape2D_vvosf")
 
