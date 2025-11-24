@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://1ooiyes2lne5"]
+[gd_scene load_steps=46 format=4 uid="uid://1ooiyes2lne5"]
 
 [ext_resource type="Script" uid="uid://dxj4xnrdofyt1" path="res://escenas/nivel_1/nivel_1.gd" id="1_6r0if"]
 [ext_resource type="Texture2D" uid="uid://tbqudwhmmpv5" path="res://escenas/nivel_1/tile_sets/Assets/CrystalWorld_v1.1/02. Crystal World/background01.png" id="1_75tth"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://vht3gww5kxls" path="res://escenas/nivel_1/control.tscn" id="18_q4sah"]
 [ext_resource type="PackedScene" uid="uid://cqyyn5sujh8ok" path="res://escenas/nivel_1/item_2.tscn" id="20_30bau"]
 [ext_resource type="PackedScene" uid="uid://2h4cdwmwarw4" path="res://musicanivel1.tscn" id="22_wty8q"]
+[ext_resource type="PackedScene" uid="uid://nkq6pw2yjtfl" path="res://killzone.tscn" id="23_w08jk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gk33u"]
 texture = ExtResource("2_dwfl2")
@@ -4574,6 +4575,9 @@ sources/0 = SubResource("TileSetAtlasSource_75tth")
 sources/1 = SubResource("TileSetAtlasSource_ag8vp")
 sources/2 = SubResource("TileSetAtlasSource_6r0if")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_krvms"]
+distance = -18.0
+
 [node name="Nivel1" type="Node2D"]
 script = ExtResource("1_6r0if")
 
@@ -4641,3 +4645,11 @@ position = Vector2(-2319, 141)
 position = Vector2(-1998, 110)
 
 [node name="Node" parent="." instance=ExtResource("22_wty8q")]
+
+[node name="Area2D" parent="." instance=ExtResource("23_w08jk")]
+position = Vector2(-1258, 212)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-76, -4)
+shape = SubResource("WorldBoundaryShape2D_krvms")
